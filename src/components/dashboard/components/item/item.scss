@@ -1,0 +1,31 @@
+$border: 1px solid black;
+$padding: 1rem;
+
+@mixin border-right {
+  border-right: $border;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(20vw, 1fr)) minmax(max-content, 10vw);
+  align-items: center;
+  
+  border: $border;
+  border-bottom: none;
+
+  &:last-child {
+    border-bottom: $border;
+  }
+}
+
+.name,
+.role,
+.date {
+  @include border-right;
+  padding: $padding;
+}
+
+.status {
+  padding: $padding;
+  justify-self: center;
+}
